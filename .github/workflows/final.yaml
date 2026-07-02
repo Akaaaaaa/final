@@ -23,10 +23,10 @@ jobs:
       - name: Run Tests
         run: go test -v ./...
 
-      - name: Run Linter
-        uses: golangci/golangci-lint-action@v6
-        with:
-          version: latest
+      - name: Install and Run golangci-lint
+        run: |
+          go install ://github.com
+          golangci-lint run --timeout=5m
 
   deploy:
     name: Push Docker image to Docker Hub
