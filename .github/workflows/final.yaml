@@ -24,13 +24,9 @@ jobs:
         run: go test -v ./...
 
       - name: Run Linter
-        uses: golangci/golangci-lint-action@v6
+        uses: golangci/golangci-lint-action@v9
         with:
-          # Явно указываем версию 1.64.9 или выше, которая поддерживает Go 1.25
-          version: v1.64.9
-          # Дополнительный флаг, заставляющий использовать системный Go 1.25 из пайплайна
-          skip-pkg-cache: true
-          skip-build-cache: true
+          version: latest
 
 
 
